@@ -24,8 +24,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    public void AddBtn(View v) throws InterruptedException{
 
-    public void ChangeColor(View v) throws InterruptedException {
+    }
+
+    public void HamburgerBtn(View v) throws InterruptedException {
       //Toolbar bar = (Toolbar) findViewById(R.id.toolbar);
       //  bar.setBackgroundColor(Color.rgb(255,255,255));
 
