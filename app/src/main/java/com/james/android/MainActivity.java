@@ -1,5 +1,6 @@
 package com.james.android;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -12,6 +13,7 @@ import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +21,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
 
+
+    public void ChangeColor(View v) throws InterruptedException {
+      //  Toolbar bar = (Toolbar) findViewById(R.id.toolbar);
+      //  bar.setBackgroundColor(Color.rgb(255,255,255));
+
+        v.setBackgroundColor(Color.rgb(255,255,255));
 
 
 
