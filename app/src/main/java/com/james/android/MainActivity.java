@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.james.android.Treadables.ClickAnimations;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -25,10 +26,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void ChangeColor(View v) throws InterruptedException {
-      //  Toolbar bar = (Toolbar) findViewById(R.id.toolbar);
+      //Toolbar bar = (Toolbar) findViewById(R.id.toolbar);
       //  bar.setBackgroundColor(Color.rgb(255,255,255));
 
-        v.setBackgroundColor(Color.rgb(255,255,255));
+        ClickAnimations cl = new ClickAnimations();
+        cl.pressed(v);
 
 
 
