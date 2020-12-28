@@ -1,31 +1,39 @@
 package com.james.android;
 
-import android.graphics.Color;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.james.android.Treadables.ClickAnimations;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import android.view.View;
-
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.view.View;
+import android.widget.CalendarView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.james.android.Treadables.ClickAnimations;
 
 public class MainActivity extends AppCompatActivity {
-
+    CalendarView c;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        c  = (CalendarView)findViewById(R.id.calendar);
+        c.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+        @Override
+        public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+            Log.d("AddBtn","year: "+ year + " Month: " + month + " Day: " + dayOfMonth);
+        }
+    });
+
     }
+
+
 
     public void AddBtn(View v) throws InterruptedException{
 
+        CalendarView c = (CalendarView) findViewById(R.id.calendar);
+        String date = "" + c.getDate();
+        Log.d("AddBtn", date);
     }
 
     public void HamburgerBtn(View v) throws InterruptedException {
@@ -34,10 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
         ClickAnimations cl = new ClickAnimations();
         cl.pressed(v);
-
-
-
-
     }
 
     @Override
