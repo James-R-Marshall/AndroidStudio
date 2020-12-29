@@ -30,7 +30,9 @@ public class DateUIHandler implements UIHandler {
     public void setC(CalendarView cv){c = cv;}
     @Override
     public void ButtonPressed(View v) {
+
        date = "" + c.getDate();
+       Log.d("Add", date);
     }
 
     @Override

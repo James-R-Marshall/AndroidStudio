@@ -35,7 +35,7 @@
             app:layout_constraintVertical_bias="0.172" />
 
         <EditText
-            android:id="@+id/editTextTime"
+            android:id="@+id/Minute"
             android:layout_width="64dp"
             android:layout_height="49dp"
             android:ems="10"
@@ -50,7 +50,7 @@
             app:layout_constraintVertical_bias="0.587" />
 
         <EditText
-            android:id="@+id/editTextTime2"
+            android:id="@+id/Hour"
             android:layout_width="64dp"
             android:layout_height="49dp"
             android:ems="10"
@@ -85,7 +85,7 @@
             android:text="@string/App_Time"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/editTextTime2"
+            app:layout_constraintEnd_toStartOf="@+id/Hour"
             app:layout_constraintHorizontal_bias="0.174"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

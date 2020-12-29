@@ -2,10 +2,13 @@ package com.james.android;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CalendarView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,7 +38,13 @@ public class MainActivity extends AppCompatActivity {
                 date.setYear(year);
                 date.setDay(dayOfMonth);
                 date.setMonth(month);
+                String hour = ((TextView)(findViewById(R.id.Hour))).getText().toString();
+                date.setHour(Integer.parseInt(hour));
+                String Minute = ((TextView)(findViewById(R.id.Minute))).getText().toString();
+                Log.d("Add",Minute);
+                date.setMinute(Integer.parseInt(Minute));
                 view.setDate(date.ConvertToMilliseconds());
+
             }
         });
 
@@ -69,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
     public void AddBtn(View v) {
 
         UIHandle.ButtonPressed(v);
+        Toast.makeText(this, date.toString(),Toast.LENGTH_LONG).show();
     }
 
     public void AnimatedBtn(View v) throws InterruptedException {

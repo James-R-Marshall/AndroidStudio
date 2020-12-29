@@ -83,7 +83,7 @@ public class CalendarDate {
 
     public long ConvertToMilliseconds(){
         Calendar c = Calendar.getInstance();
-        c.set(year, month, day,12,59,0);
+        c.set(year, month, day,hour,minute,0);
         return c.getTimeInMillis();
     }
 }
