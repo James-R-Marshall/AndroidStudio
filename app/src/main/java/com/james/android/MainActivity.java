@@ -1,48 +1,48 @@
 package com.james.android;
 
+import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CalendarView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.james.android.Treadables.ClickAnimations;
+import com.james.android.Objects.CalendarDate;
+import com.james.android.Objects.DateUIHandler;
+import com.james.android.Objects.UIHandler;
 
 public class MainActivity extends AppCompatActivity {
     CalendarView c;
+    CalendarDate date = new CalendarDate();
+   UIHandler UIHandle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // grabbing the calander during the creation of out View so that we
+        // can set the click handler for the calander to a custom one
         setContentView(R.layout.activity_main);
         c  = (CalendarView)findViewById(R.id.calendar);
-        c.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+        c.setOnDateChangeListener(new CalendarView.OnDateChangeListener()
+        {
+        @RequiresApi(api = Build.VERSION_CODES.N)
         @Override
-        public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
-            Log.d("AddBtn","year: "+ year + " Month: " + month + " Day: " + dayOfMonth);
-        }
-    });
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
 
+                date.setYear(year);
+                date.setDay(dayOfMonth);
+                date.setMonth(month);
+                view.setDate(date.ConvertToMilliseconds());
+            }
+        });
+
+        UIHandle = new DateUIHandler(this);
+        ((DateUIHandler)UIHandle).setC(c);
     }
 
-
-
-    public void AddBtn(View v) throws InterruptedException{
-
-        CalendarView c = (CalendarView) findViewById(R.id.calendar);
-        String date = "" + c.getDate();
-        Log.d("AddBtn", date);
-    }
-
-    public void HamburgerBtn(View v) throws InterruptedException {
-      //Toolbar bar = (Toolbar) findViewById(R.id.toolbar);
-      //  bar.setBackgroundColor(Color.rgb(255,255,255));
-
-        ClickAnimations cl = new ClickAnimations();
-        cl.pressed(v);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -65,4 +65,15 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void AddBtn(View v) {
+
+        UIHandle.ButtonPressed(v);
+    }
+
+    public void AnimatedBtn(View v) throws InterruptedException {
+        UIHandle.AnimatedButtonPressed(v);
+    }
+
+
 }

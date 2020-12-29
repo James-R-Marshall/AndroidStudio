@@ -18,10 +18,10 @@
             android:text="@string/App_Add"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.915"
+            app:layout_constraintHorizontal_bias="0.891"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.571" />
+            app:layout_constraintVertical_bias="0.882" />
 
         <CalendarView
             android:id="@+id/calendar"
@@ -33,6 +33,63 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.172" />
+
+        <EditText
+            android:id="@+id/editTextTime"
+            android:layout_width="64dp"
+            android:layout_height="49dp"
+            android:ems="10"
+            android:inputType="time"
+            android:text="00"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.865"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.587" />
+
+        <EditText
+            android:id="@+id/editTextTime2"
+            android:layout_width="64dp"
+            android:layout_height="49dp"
+            android:ems="10"
+            android:inputType="time"
+            android:text="00"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.659"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.586" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="8dp"
+            android:layout_height="51dp"
+            android:layout_marginBottom="21dp"
+            android:text="@string/App_semi"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.69"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="80dp"
+            android:layout_height="32dp"
+            android:text="@string/App_Time"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/editTextTime2"
+            app:layout_constraintHorizontal_bias="0.174"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.583" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -52,7 +109,7 @@
             android:clickable="true"
             android:focusable="true"
             android:foreground="@drawable/hamburger"
-            android:onClick="HamburgerBtn"
+            android:onClick="AnimatedBtn"
             app:backgroundTint="#673AB7"
             app:icon="@drawable/hamburger"
             app:layout_constraintEnd_toEndOf="parent"

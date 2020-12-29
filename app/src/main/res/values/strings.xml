@@ -11,4 +11,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="app_Title">Home</string>
     <string name="App_Add">Add</string>
+    <string name="App_semi">:</string>
+    <string name="App_Time">Time</string>
 </resources>

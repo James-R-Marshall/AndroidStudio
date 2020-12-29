@@ -14,14 +14,11 @@ public class ClickAnimations{
             @Override
             public void run() {
                 v.setBackgroundColor(Color.rgb(255, 255, 255));
-
                 try {
                     sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
-
                 v.setBackgroundColor(Color.alpha(0));
             }
         }).start();
