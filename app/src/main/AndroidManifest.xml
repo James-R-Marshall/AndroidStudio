@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android">
         <activity
+            android:name=".ViewScheduleActivity"
+            android:label="@string/title_activity_view_schedule"
+            android:theme="@style/Theme.Android.NoActionBar"></activity>
+        <activity
+            android:name=".ConfirmAddActivity"
+            android:label="@string/title_activity_confirm_add"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.Android.NoActionBar" />
+        <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.Android.NoActionBar">

@@ -1,5 +1,6 @@
 package com.james.android;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,15 +17,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.james.android.Objects.CalendarDate;
 import com.james.android.Objects.DateUIHandler;
 import com.james.android.Objects.UIHandler;
+import com.james.android.Repos.IRepository;
 
 public class MainActivity extends AppCompatActivity {
     CalendarView c;
     CalendarDate date = new CalendarDate();
-   UIHandler UIHandle;
+    UIHandler UIHandle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         // grabbing the calander during the creation of out View so that we
         // can set the click handler for the calander to a custom one
         setContentView(R.layout.activity_main);
@@ -79,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
 
         UIHandle.ButtonPressed(v);
         Toast.makeText(this, date.toString(),Toast.LENGTH_LONG).show();
+        Intent i = new Intent(this, ConfirmAddActivity.class);
+        i.putExtra("date", date.toShortString());
+        startActivity(i);
     }
 
     public void AnimatedBtn(View v) throws InterruptedException {

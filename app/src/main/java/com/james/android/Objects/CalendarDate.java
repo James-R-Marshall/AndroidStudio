@@ -3,8 +3,12 @@ package com.james.android.Objects;
 import android.provider.CalendarContract;
 
 import java.util.Calendar;
+import java.util.List;
+import java.util.Vector;
 
 public class CalendarDate {
+
+
     private int year = 0;
     private int month = 0;
     private int day = 0;
@@ -70,13 +74,46 @@ public class CalendarDate {
                 ", second=" + second +
                 '}';
     }
+    public String toDateString(){
+        return ""+month+"/"+day+"/"+year+"\t" +hour+":"+minute;
+    }
+    public Vector<String> convertToListOFDateStrings(Vector<CalendarDate> v){
+        Vector<String> dates = new Vector<String>();
+        for (int i = 0; i < v.size(); i++) {
+            dates.add(v.elementAt(i).toDateString());
+        }
+        return dates;
+    }
+
+    public void ParseShortString(String Sdate){
+        String holder = new String();
+        int values[] = new int[6];
+        int x = 0;
+        for (int i = 0; i < Sdate.length(); i++){
+            if (Sdate.charAt(i) == ' '){
+                values[x] = Integer.parseInt(holder);
+                holder = "";
+                x++;
+            }
+            else{
+                holder+=Sdate.charAt(i);
+            }
+        }
+        year = values[0];
+        month = values[1];
+        day = values[2];
+        hour = values[3];
+        minute = values[4];
+        second = values[5];
+
+    }
 
     public String toShortString() {
-        return  "" + year +
-                 + month +
-                 + day +
-                 + hour +
-                 + minute +
+        return  "" + year +" "+
+                 + month +" "+
+                 + day +" "+
+                 + hour +" "+
+                 + minute +" "+
                  + second;
     }
 
